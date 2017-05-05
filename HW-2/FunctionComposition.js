@@ -1,5 +1,6 @@
-function compose(f,g) {
-  return function( x ) {
-     return f( g( x ) );
+function compose(f, g) {
+    // Composing two functions here!
+    return function (...args) {
+        return f(g(...args));
     }
 }
