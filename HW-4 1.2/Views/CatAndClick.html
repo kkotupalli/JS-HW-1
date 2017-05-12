@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="CatAndClick">
+<head>
+    <script src="../scripts/angular.min.js" type="text/javascript"></script>
+    <script src="../scripts/app.js" type="text/javascript"></script>
+    <script src="../Controllers/CatAndClick.js" type="text/javascript"></script>
+    <title>Click The Cat</title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="CatAndClickController">
+    <div ng-repeat="cat in main._catsList">
+        <table>
+            <tr>
+                <td style="border:5px solid black; width:305px; padding:3px">
+                    <img src="../Images/cat.jpeg" alt="Mountain View" style="width:304px;height:228px;" ng-click="main.ClickTheCat(cat.name)" title="Click Me..!!">
+                </td>
+                <td style="border:5px solid black; width:305px; padding:3px">
+                    Cat Name : {{cat.name}}
+                    <br />
+                    Number of Clicks: {{cat.ClickCount}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
