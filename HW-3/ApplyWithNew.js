@@ -1,10 +1,5 @@
-function factory(){
-    return {
-        createGreeting() {
-           return construct(Greeting, arguments);
-        }
-    }
-}
-function construct(Class){
-    return new(Class.bind.apply(Class, arguments))()
+function Construct(Class, ...arg){
+    var obj - Object.create(Class.prototype);
+    Class.apply(obj, arg);
+    return obj;
 }
