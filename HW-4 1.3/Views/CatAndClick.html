@@ -11,16 +11,12 @@
     <div>
         <div  ng-repeat="cat in catCtrl.catList track by $index">
             <div >
-                <img ng-src={{cat.src}} ng-click="catCtrl.incrementCount(cat)"  />
+                <img ng-src={{cat.src}} ng-click="catCtrl.increaseCount(cat)"  />
             </div>
             <div >
                 <div >
                     <label>Name: </label>
                     <span ng-bind="cat.name"></span>
-                </div>
-                <div >
-                    <label>Description:</label>
-                    <span ng-bind="cat.description"></span>
                 </div>
                 <div >
                     <label>No of clicks: </label>
