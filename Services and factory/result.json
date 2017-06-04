@@ -1,0 +1,45 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Ronny",
+            "src": "./images/cat5.png",
+            "clickCount": 0,
+            "votes": 0,
+            "isClicked": false
+        },
+            {
+                "id": 2,
+                "name": "Mumella",
+                "src": "./images/cat1.png",
+                "clickCount": 0,
+                "votes": 0,
+                "isClicked": false
+        },
+            {
+                "id": 3,
+                "name": "chotu",
+                "src": "./images/cat3.png",
+                "clickCount": 0,
+                "votes": 0,
+                "isClicked": false
+        },
+            {
+                "id": 4,
+                "name": "bubeli",
+                "src": "./images/cat6.png",
+                "clickCount": 0,
+                "votes": 0,
+                "isClicked": false
+        },
+            {
+                "id": 5,
+                "name": "Bengal Cat",
+                "src": "./images/cat2.png",
+                "clickCount": 0,
+                "votes": 0,
+                "isClicked": false
+        }
+    ],
+    "success": true
+}
