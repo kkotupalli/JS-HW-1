@@ -7,42 +7,27 @@
     <title>Click The Cat</title>
     <meta charset="utf-8" />
 </head>
-<body ng-controller="CatAndClickController">
+<body ng-controller="catController as catCtrl">
     <div>
-        <table>
-            <tr>
-                <td ng-repeat="cat in main._catsList" style="border:5px solid black; width:305px; padding:3px">
-
-                    <a ng-click="main.FillTextArea(cat.name)">{{cat.name}}</a>
-                </td>
-
-            </tr>
-            <tr>
-                <td style="border:5px solid black; width:500px; padding:3px" ng-show="main._displayDetails">
-                    <div ng-show="main._showBlueJack">
-                        <img src="../Images/Blue Jack.jpeg" alt="Mountain View" style="width:500px;height:228px;" title="Click Me..!!" ng-click="main.ClickTheCat(main._selectedCatname)">
-                    </div>
-                    <div ng-show="main._showCurly">
-                        <img src="../Images/Curly.jpeg" alt="Mountain View" style="width:500px;height:228px;" title="Click Me..!!" ng-click="main.ClickTheCat(main._selectedCatname)">
-                    </div>
-                    <div ng-show="main._showJerry">
-                        <img src="../Images/Jerry.jpeg" alt="Mountain View" style="width:500px;height:228px;" title="Click Me..!!" ng-click="main.ClickTheCat(main._selectedCatname)">
-                    </div>
-                    <div ng-show="main._showKaty">
-                        <img src="../Images/Katy.jpeg" alt="Mountain View" style="width:500px;height:228px;" title="Click Me..!!" ng-click="main.ClickTheCat(main._selectedCatname)">
-                    </div>
-                    <div ng-show="main._showMickey">
-                        <img src="../Images/Mickey.jpeg" alt="Mountain View" style="width:500px;height:228px;" title="Click Me..!!" ng-click="main.ClickTheCat(main._selectedCatname)">
-                    </div>
-                </td>
-                <td ng-show="main._displayDetails" style="border:5px solid black; width:100px; padding:3px">
-                    Cat Name : {{main._selectedCatname}}
-                    <br />
-                    Number of Clicks: {{main._selectedClickCount}}
-                </td>
-            </tr>
-        </table>
-
+        <div  ng-repeat="cat in catCtrl.catList track by $index">
+            <div >
+                <img ng-src={{cat.src}} ng-click="catCtrl.incrementCount(cat)"  />
+            </div>
+            <div >
+                <div >
+                    <label>Name: </label>
+                    <span ng-bind="cat.name"></span>
+                </div>
+                <div >
+                    <label>Description:</label>
+                    <span ng-bind="cat.description"></span>
+                </div>
+                <div >
+                    <label>No of clicks: </label>
+                    <span ng-bind="cat.clickCount"></span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
