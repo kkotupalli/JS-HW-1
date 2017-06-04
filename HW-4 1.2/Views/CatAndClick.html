@@ -7,20 +7,23 @@
     <title>Click The Cat</title>
     <meta charset="utf-8" />
 </head>
-<body ng-controller="CatAndClickController">
-    <div ng-repeat="cat in main._catsList">
-        <table>
-            <tr>
-                <td style="border:5px solid black; width:305px; padding:3px">
-                    <img src="../Images/cat.jpeg" alt="Mountain View" style="width:304px;height:228px;" ng-click="main.ClickTheCat(cat.name)" title="Click Me..!!">
-                </td>
-                <td style="border:5px solid black; width:305px; padding:3px">
-                    Cat Name : {{cat.name}}
-                    <br />
-                    Number of Clicks: {{cat.ClickCount}}
-                </td>
-            </tr>
-        </table>
+<body ng-app="CatAndClick">
+    <div ng-controller="catController as catCtrl">
+        <div>
+            <div>
+                <img src="./images/cat.jpeg ng-click="catCtrl.incrementCount()" />
+            </div>
+            <div>
+                <div class="row">
+                    <label>Name: </label>
+                    <span ng-bind="catCtrl.catObj.name"></span>
+                </div>
+                <div class="row">
+                    <label>Nnumber of clicks: </label>
+                    <span ng-bind="catCtrl.catObj.clickCount"></span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
