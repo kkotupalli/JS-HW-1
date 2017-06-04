@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="CatAndClick">
+<head>
+    <script src="../scripts/angular.min.js" type="text/javascript"></script>
+    <script src="../scripts/app.js" type="text/javascript"></script>
+    <script src="../Controllers/CatAndClick.js" type="text/javascript"></script>
+    <title>Click The Cat</title>
+    <meta charset="utf-8" />
+</head>
+<body ng-app="catController as catCtrl">
+    <div>
+        <div  ng-repeat="cat in catCtrl.catList track by $index">
+            <div>
+                <img ng-src={{cat.src}} ng-click="catCtrl.incrementCount(cat)"  />
+            </div>
+            <div >
+                <div >
+                    <label>Name: </label>
+                    <span ng-bind="cat.name"></span>
+                </div>
+                <div >
+                    <label>No of clicks: </label>
+                    <span ng-bind="cat.clickCount"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
